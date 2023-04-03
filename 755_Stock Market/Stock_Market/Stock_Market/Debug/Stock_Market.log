@@ -1,0 +1,12 @@
+﻿  Stock_Market.cpp
+C:\Users\sam\OneDrive - City University of Hong Kong\2021-2022_Sem A\CS3334_Data Structures\Assignments\755_Stock Market\Stock_Market\Stock_Market\Stock_Market.cpp(24,20): warning C4244: '=': 將 '_Ty' 轉換為 'int'，由於類型不同，可能導致資料遺失
+          with
+          [
+              _Ty=__int64
+          ]
+C:\Users\sam\OneDrive - City University of Hong Kong\2021-2022_Sem A\CS3334_Data Structures\Assignments\755_Stock Market\Stock_Market\Stock_Market\Stock_Market.cpp(31,19): warning C4244: '=': 將 '_Ty' 轉換為 'int'，由於類型不同，可能導致資料遺失
+          with
+          [
+              _Ty=__int64
+          ]
+  Stock_Market.vcxproj -> C:\Users\sam\OneDrive - City University of Hong Kong\2021-2022_Sem A\CS3334_Data Structures\Assignments\755_Stock Market\Stock_Market\Debug\Stock_Market.exe
