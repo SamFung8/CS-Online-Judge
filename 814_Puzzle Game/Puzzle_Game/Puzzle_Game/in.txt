@@ -1,0 +1,148 @@
+4 4 2 
+1 1 2 2 
+1 1 2 2 
+3 3 4 4 
+3 3 4 4 
+1 1 3 3 2 2 
+3 1 1 3 2 2 
+2 2 1 
+1 2 
+3 4 
+1 1 2 2 1 1
+
+4 6 1
+1 1 1 2 2 2
+1 1 1 2 2 2
+3 3 3 4 4 4
+3 3 3 4 4 4
+3 3 3 5 2 1
+
+3 2 1
+1 2
+1 2
+2 1
+1 1 1 2 2 1
+
+
+#include <iostream>
+#include <string>
+#include <sstream> 
+#include <vector>
+#include <queue>
+#include <unordered_map>
+using namespace std;
+
+class Node {
+public:
+	int data;
+	Node* right, * down;
+};
+
+Node* construct(int(&arr)[1100][1100], int i, int j,
+	int m, int n)
+{
+	if (i > n - 1 || j > m - 1)
+		return NULL;
+
+	Node* temp = new Node();
+	temp->data = arr[i][j];
+	temp->right = construct(arr, i, j + 1, m, n);
+	temp->down = construct(arr, i + 1, j, m, n);
+	return temp;
+}
+
+void display(Node* head, int row, int col)
+{
+	int countR = 0;
+
+	Node* Rp;
+
+	Node* Dp = head;
+
+	while (Dp) {
+		Rp = Dp;
+
+		if (countR > 0 && countR < row + 1) {
+			int countC = 0;
+			while (countC < col + 1) {
+				if (countC > 0 && countC < col + 1) {
+					cout << Rp->data << " ";
+				}
+				countC++;
+				Rp = Rp->right;
+			}
+			cout << "\n";
+		}
+		countR++;
+		Dp = Dp->down;
+	}
+}
+
+int arr[1100][1100];
+Node* firstCH;
+Node* secondCH;
+Node* firstCH2;
+Node* secondCH2;
+
+int main()
+{
+	int row = 0;
+	while (cin >> row) {
+		int col = 0, swap_times = 0;
+
+		cin >> col;
+		cin >> swap_times;
+
+
+
+		for (int i = 0; i < row ; i++) {
+		int currentNum = -1;
+			for (int j = 0; j < col; j++) {
+				int num;
+				cin >> num;
+
+				if (num != currentNum) {
+					arr[i][j] = num;
+					currentNum = num;
+				}
+			}
+		}
+
+		
+
+
+		int r1, c1, r2, c2, h, w;
+		for (int i = 0; i < swap_times; i++) {
+			cin >> r1;
+			cin >> c1;
+			cin >> r2;
+			cin >> c2;
+			cin >> h;
+			cin >> w;
+
+			
+			for (int i = 0; i < h; i++) {
+				swap(arr[r1 - 1 + i][c1 - 1], arr[r2 - 1 + i][c2 - 1]);
+			}
+		}
+
+		for (int i = 0; i < row; i++) {
+			int currentNum1 = -1;
+			for (int j = 0; j < col; j++) {
+				if (arr[i][j] == 0) {
+					cout << currentNum1;
+					cout << ' ';
+					continue;
+				}
+				if (arr[i][j] != currentNum1) {
+					cout << arr[i][j];
+					cout << ' ';
+					currentNum1 = arr[i][j];
+				}
+			}
+			cout << '\n';
+		}
+		
+	}
+	return 0;
+}
