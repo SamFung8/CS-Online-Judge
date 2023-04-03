@@ -1,0 +1,3 @@
+﻿  8404_Simple_ver.cpp
+C:\Users\sam\OneDrive - City University of Hong Kong\2021-2022_Sem A\CS3334_Data Structures\Assignments\827_8404(Simple ver)\8404_Simple_ver\8404_Simple_ver\8404_Simple_ver.cpp(12,16): warning C4244: '正在初始化': 將 '__int64' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+  8404_Simple_ver.vcxproj -> C:\Users\sam\OneDrive - City University of Hong Kong\2021-2022_Sem A\CS3334_Data Structures\Assignments\827_8404(Simple ver)\8404_Simple_ver\Debug\8404_Simple_ver.exe
